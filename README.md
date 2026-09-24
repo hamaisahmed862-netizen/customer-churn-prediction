@@ -4,6 +4,11 @@ A machine learning project that predicts whether a telecom customer is likely to
 
 The project uses a **neural network built with TensorFlow/Keras**, with preprocessing handled through **scikit-learn pipelines**. A **Streamlit web application** provides an interactive interface for making predictions for new customers.
 
+## Live Demo
+
+🚀 **Try the application:**
+https://customer-churn-prediction-cv.streamlit.app/
+
 ---
 
 ## Project Overview
@@ -75,7 +80,7 @@ Because the classes are not evenly distributed, accuracy alone is not sufficient
 
 ## Features Used
 
-The model uses 20 customer features:
+The model uses 20 customer features.
 
 ### Customer Information
 
@@ -125,7 +130,7 @@ This contains the same target information in text form and would duplicate the t
 
 ### Churn Reason
 
-This describes why a customer already churned and therefore would introduce information that would not be available when predicting future churn.
+This describes why a customer already churned and would introduce information that would not be available when predicting future churn.
 
 ### Churn Score
 
@@ -149,7 +154,7 @@ The initial model excludes:
 * Latitude
 * Longitude
 
-This keeps the first version of the model focused on customer behavior, services, contracts, and billing characteristics.
+This keeps the model focused on customer behavior, services, contracts, and billing characteristics.
 
 ---
 
@@ -176,7 +181,7 @@ Customers with **month-to-month contracts** have a substantially higher observed
 
 Customers using **fiber optic internet** also show a higher observed churn rate than the other internet-service groups in this dataset.
 
-The analysis also showed that customers who churn have higher average monthly charges than customers who do not churn.
+Customers who churn have a higher average monthly charge than customers who do not churn.
 
 ---
 
@@ -275,7 +280,7 @@ The encoder uses:
 handle_unknown="ignore"
 ```
 
-This allows the preprocessing pipeline to handle an unseen categorical value when making predictions on new customers.
+This allows the preprocessing pipeline to handle unseen categorical values when making predictions on new customers.
 
 After preprocessing, the 20 original features become **47 numerical inputs** for the neural network.
 
@@ -403,13 +408,6 @@ The final saved model was evaluated on the test set.
 The final confusion matrix was:
 
 ```text
-[[821, 214],
- [111, 263]]
-```
-
-This represents:
-
-```text
                  Predicted
                No Churn  Churn
 
@@ -465,6 +463,10 @@ After clicking **Predict Churn**, the application displays:
 
 * Churn probability
 * Churn / No Churn prediction
+
+### Live Application
+
+🚀 **https://customer-churn-prediction-cv.streamlit.app/**
 
 The application loads the trained model and fitted preprocessing pipeline:
 
@@ -528,7 +530,7 @@ customer-churn-prediction/
 Clone the repository:
 
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/hamaisahmed862-netizen/customer-churn-prediction.git
 ```
 
 Navigate into the project:
@@ -576,8 +578,6 @@ python predict.py
 ```bash
 streamlit run app.py
 ```
-
-The Streamlit application will open in your browser.
 
 ---
 
@@ -631,21 +631,6 @@ This project demonstrates practical use of:
 
 ---
 
-# Future Improvements
-
-Possible future improvements include:
-
-* Hyperparameter tuning
-* Cross-validation
-* Additional feature engineering
-* Testing additional neural-network architectures
-* Calibration of predicted probabilities
-* Further analysis of customer segments
-* Deployment to a cloud platform
-* Adding model monitoring and prediction logging
-
----
-
 # Key Learning Outcomes
 
 Through this project, I gained practical experience in building an end-to-end machine learning workflow rather than only training a model.
@@ -671,7 +656,23 @@ Model Saving
      ↓
 Prediction
      ↓
-Streamlit Application
+Streamlit Deployment
 ```
 
 The project also demonstrates how a fitted preprocessing pipeline can be saved alongside a trained neural network so that the same transformations are applied when making predictions on new customer data.
+
+---
+
+# Future Improvements
+
+Possible future improvements include:
+
+* Hyperparameter tuning
+* Cross-validation
+* Additional feature engineering
+* Testing additional neural-network architectures
+* Calibration of predicted probabilities
+* Further analysis of customer segments
+* Model monitoring
+* Prediction logging
+* Further deployment improvements
